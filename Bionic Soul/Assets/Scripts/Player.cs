@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     //private GameController gc;
     private bool groundCheck;
     private Transform foot;
-    public GameObject bullet;
+    //public GameObject bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +38,11 @@ public class Player : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
         //BOTÃO DE GATINHO PRA ARMA
-        if (Input.GetButtonDown("Fire1"))
+        /*if (Input.GetButtonDown("Fire1"))
         {
             GameObject tempprefab = Instantiate(bullet) as GameObject;
             tempprefab.transform.position = transform.position;
-        }
+        }*/
     }
 
     //MORTE PELO ENEMEGO
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene("Death");
+            SceneManager.LoadScene("GameOver");
             gameObject.SetActive(false);
             //gc.GameOver();
 
