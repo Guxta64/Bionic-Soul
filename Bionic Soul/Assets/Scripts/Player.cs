@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
+
         //BOTÃO DE GATINHO PRA ARMA
         /*if (Input.GetButtonDown("Fire1"))
         {
