@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
 
         // Jump
-        groundCheck = Physics2D.OverlapCircle(foot.position, 0.03f);
+        //groundCheck = Physics2D.OverlapCircle(foot.position, 0.03f);
 
         if (Input.GetButtonDown("Jump") && groundCheck)
         {
@@ -67,6 +67,10 @@ public class Player : MonoBehaviour
             //tempprefab.transform.position = gameObject.transform.position;
             Shoot();
         }
+    }
+    public void SetGroundCheck(bool grounded)
+    {
+        groundCheck = grounded;
     }
     void Shoot()
     {
