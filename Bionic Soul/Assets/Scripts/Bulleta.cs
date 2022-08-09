@@ -26,7 +26,6 @@ public class Bulleta : MonoBehaviour
         {
             enemy = collision.gameObject;
             enemyScript = enemy.GetComponent<Enemy>();
-            enemyScript.enemyHP -= damage;
 
 
             //Kill da espada + inimigo
