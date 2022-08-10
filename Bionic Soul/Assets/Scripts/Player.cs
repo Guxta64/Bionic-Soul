@@ -86,18 +86,14 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Death");
             gameObject.SetActive(false);
-            gc.GameOver();
-
         }
         if (collision.gameObject.CompareTag("Sexo"))
         {
             SceneManager.LoadScene("WinScene");
-            gc.WinScene();
         }
         if (collision.gameObject.CompareTag("Game"))
         {
             SceneManager.LoadScene("Game");
-            gc.Game();
         }
     }*/
 }
