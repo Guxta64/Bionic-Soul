@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public float currentHealth;
 
     private void Awake()
     {
@@ -24,6 +24,14 @@ public class Health : MonoBehaviour
             //plyer dead
         }
     }
+    public void takeDamageShot()
+    {
+
+        currentHealth--;
+
+    }
+
+
     private void Update()
     {
         
