@@ -7,6 +7,8 @@ public class LinhaDeVisao : MonoBehaviour
 
     private GameObject enemy;
     private Enemy enemySCR;
+    [SerializeField]
+    private float timer;
 
     // Start is called before the first frame update
     void Start() {
@@ -19,7 +21,7 @@ public class LinhaDeVisao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
 
 
     }
@@ -29,15 +31,23 @@ public class LinhaDeVisao : MonoBehaviour
     {
 
         if (col.CompareTag("Player"))
-        {
+            timer = 1;
+    }
 
-            enemySCR.temVisao = true;
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+           
+            if (timer <= 0)
+            {
+                enemySCR.temVisao = true;
+                timer = 1000;
+            }
             print("Caralhooooooo");
 
         }
-
     }
-
 
     private void OnTriggerExit2D(Collider2D col)
     {

@@ -12,18 +12,6 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(float _damage)
-    {
-        if (currentHealth > 0)
-        {
-            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-            //Dano do inimigo não está funcionando
-        }
-        else
-        {
-            //plyer dead
-        }
-    }
     public void takeDamageShot()
     {
 

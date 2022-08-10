@@ -9,9 +9,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
-    [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask PlayerLayer;
     private float cooldownTimer = Mathf.Infinity;
+    private float tempo;
 
     //Referencias
     private Animator anim;
@@ -41,12 +41,6 @@ public class Enemy : MonoBehaviour
             cooldownTimer = 0;
             //anim.SetTrigger("");
         }
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-        new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
 
