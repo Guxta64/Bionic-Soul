@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerInSight();
         cooldownTimer += Time.deltaTime;
         if (cooldownTimer >= attackCooldown)
         {
@@ -36,9 +37,12 @@ public class Enemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, PlayerLayer);
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();            
+            {
+            print("sexo2???????????ww??ww?????????w???????????????????????!");
+                playerHealth = hit.transform.GetComponent<Health>();
+            }
+                 
         return hit.collider != null;
-
     }
     private void OnDrawGizmos()
     {
