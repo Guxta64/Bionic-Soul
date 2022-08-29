@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonMestre : MonoBehaviour
 {
-    public GameObject pausa, Objects, Menu, Config, Tutorial;
+    public GameObject pausa, Objects, Menu, Config, Tutorial, Fps, Musica, slider, brilho, BotaoBrilho;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +38,19 @@ public class ButtonMestre : MonoBehaviour
     {
         Menu.SetActive(true);
         Config.SetActive(false);
+    }
+    public void FPS()
+    {
+        Fps.SetActive(false);
+    }
+    public void Mute()
+    {
+        Musica.SetActive(false);
+        slider.SetActive(false);
+    }
+    public void Brilho()
+    {
+        brilho.SetActive(true);
+        BotaoBrilho.SetActive(false);
     }
 }
