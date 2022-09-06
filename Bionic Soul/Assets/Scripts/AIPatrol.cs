@@ -8,8 +8,13 @@ public class AIPatrol : MonoBehaviour
 
     [HideInInspector]
     public bool mustPatrol;
+    private bool mustTurn;
+    public Collider2D bodyCollider;
+
 
     public Rigidbody2D rb;
+    public Transform groundCheckPos;
+    public LayerMask scenaryLayer;
     void Start()
     {
         mustPatrol = true;
@@ -21,8 +26,19 @@ public class AIPatrol : MonoBehaviour
             Patrol();
         }
     }
+    private void FixedUpdate()
+    {
+        if (mustPatrol)
+        {
+            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, scenaryLayer);
+        }
+    }
     void Patrol()
     {
+        if (mustTurn || bodyCollider.IsTouchingLayers(scenaryLayer))
+        {
+            Flip();
+        }
         rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, rb.velocity.y);
     }
     void Flip()
