@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         if (horizontal < 0) //esquerda
         {
 
-            transform.rotation = new Quaternion(0f, 180f, 0f, 0);
+            transform.rotation = new Quaternion(0f, 0f, 0f, 0);
 
         }
 
