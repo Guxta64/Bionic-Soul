@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 59362263}
   - component: {fileID: 59362265}
   - component: {fileID: 59362264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 155941966}
   - component: {fileID: 155941968}
   - component: {fileID: 155941967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 178929103}
   - component: {fileID: 178929105}
   - component: {fileID: 178929104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,6 +552,7 @@ MonoBehaviour:
   tutorial_2: {fileID: 0}
   tutorial_3: {fileID: 0}
   tutorial_4: {fileID: 0}
+  tutorial_5: {fileID: 0}
 --- !u!212 &194492975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -611,7 +612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194492973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.48, y: -15.27, z: 0}
+  m_LocalPosition: {x: -16.48, y: -15.23, z: 0}
   m_LocalScale: {x: 0.6553, y: 0.6553, z: 0.6553}
   m_Children: []
   m_Father: {fileID: 0}
@@ -649,6 +650,7 @@ MonoBehaviour:
   tutorial_2: {fileID: 0}
   tutorial_3: {fileID: 0}
   tutorial_4: {fileID: 0}
+  tutorial_5: {fileID: 0}
 --- !u!1 &213721659
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +662,7 @@ GameObject:
   - component: {fileID: 213721660}
   - component: {fileID: 213721662}
   - component: {fileID: 213721661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.99, y: 135}
+  m_AnchoredPosition: {x: 46, y: 135}
   m_SizeDelta: {x: 1808.02, y: 884.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268690381
@@ -816,11 +818,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 300
+    m_Font: {fileID: 12800000, guid: 9585f80d487f53a488756f1055c77b56, type: 3}
+    m_FontSize: 74
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 7
     m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 1
@@ -848,7 +850,7 @@ GameObject:
   - component: {fileID: 426293869}
   - component: {fileID: 426293871}
   - component: {fileID: 426293870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +959,7 @@ GameObject:
   - component: {fileID: 438452174}
   - component: {fileID: 438452176}
   - component: {fileID: 438452175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1256,7 @@ GameObject:
   - component: {fileID: 522480930}
   - component: {fileID: 522480932}
   - component: {fileID: 522480931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,7 +1365,7 @@ GameObject:
   - component: {fileID: 526405020}
   - component: {fileID: 526405022}
   - component: {fileID: 526405021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1474,7 @@ GameObject:
   - component: {fileID: 580632581}
   - component: {fileID: 580632583}
   - component: {fileID: 580632582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1583,7 @@ GameObject:
   - component: {fileID: 686946205}
   - component: {fileID: 686946207}
   - component: {fileID: 686946206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1688,6 +1690,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694079092}
+  - component: {fileID: 694079093}
+  - component: {fileID: 694079094}
   m_Layer: 0
   m_Name: foot
   m_TagString: groundCheck
@@ -1709,6 +1713,44 @@ Transform:
   m_Father: {fileID: 1947195097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &694079093
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694079091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.022745132, y: 0.30627155}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9735565, y: 0.3874569}
+  m_EdgeRadius: 0
+--- !u!114 &694079094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694079091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138d1f5fc420cfa4b86b7893bab3d1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736727966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,7 +1762,7 @@ GameObject:
   - component: {fileID: 736727968}
   - component: {fileID: 736727967}
   - component: {fileID: 736727969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2122,7 +2164,7 @@ GameObject:
   - component: {fileID: 1154409943}
   - component: {fileID: 1154409945}
   - component: {fileID: 1154409944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2231,7 +2273,7 @@ GameObject:
   - component: {fileID: 1207543170}
   - component: {fileID: 1207543172}
   - component: {fileID: 1207543171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2340,7 +2382,7 @@ GameObject:
   - component: {fileID: 1242396565}
   - component: {fileID: 1242396567}
   - component: {fileID: 1242396566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2531,7 +2573,7 @@ GameObject:
   - component: {fileID: 1309267946}
   - component: {fileID: 1309267948}
   - component: {fileID: 1309267947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2640,7 +2682,7 @@ GameObject:
   - component: {fileID: 1325114896}
   - component: {fileID: 1325114898}
   - component: {fileID: 1325114897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,8 +2814,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33, y: 155}
-  m_SizeDelta: {x: 532.9097, y: 228.9689}
+  m_AnchoredPosition: {x: -1.5, y: 157.38}
+  m_SizeDelta: {x: 463.93, y: 224.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1330589379
 MonoBehaviour:
@@ -2796,8 +2838,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 74
+    m_Font: {fileID: 12800000, guid: 9585f80d487f53a488756f1055c77b56, type: 3}
+    m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2808,7 +2850,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Siga a seta e colete a moeda
+  m_Text: Siga a seta usando    A    ou    D    e colete a moeda
 --- !u!222 &1330589380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2868,6 +2910,7 @@ MonoBehaviour:
   tutorial_2: {fileID: 0}
   tutorial_3: {fileID: 0}
   tutorial_4: {fileID: 0}
+  tutorial_5: {fileID: 0}
 --- !u!212 &1363277899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2927,7 +2970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363277896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.06, y: -15.26, z: 0}
+  m_LocalPosition: {x: -11.37, y: -12.6, z: 0}
   m_LocalScale: {x: 0.6553, y: 0.6553, z: 0.6553}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2944,7 +2987,7 @@ GameObject:
   - component: {fileID: 1395590919}
   - component: {fileID: 1395590921}
   - component: {fileID: 1395590920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3117,7 +3160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558800549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level_design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3291,7 @@ GameObject:
   - component: {fileID: 1658095269}
   - component: {fileID: 1658095271}
   - component: {fileID: 1658095270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3640,7 +3683,7 @@ GameObject:
   - component: {fileID: 1897220032}
   - component: {fileID: 1897220034}
   - component: {fileID: 1897220033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3749,7 +3792,7 @@ GameObject:
   - component: {fileID: 1921060134}
   - component: {fileID: 1921060136}
   - component: {fileID: 1921060135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3996,7 +4039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedX: 4
   jumpStrength: 6
-  horizontal: 0
+  horizontal: 2
   swordSpawn: {fileID: 0}
   bulletPrefab: {fileID: 0}
 --- !u!114 &1947195101
@@ -4013,8 +4056,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorial_1: {fileID: 1330589377}
   tutorial_2: {fileID: 268690379}
-  tutorial_3: {fileID: 0}
-  tutorial_4: {fileID: 0}
+  tutorial_3: {fileID: 2119998420}
+  tutorial_4: {fileID: 1603189937}
+  tutorial_5: {fileID: 0}
 --- !u!1 &2073178962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 272088575199637950, guid: cc98a115b52edc14394a9541a13d3e19, type: 3}

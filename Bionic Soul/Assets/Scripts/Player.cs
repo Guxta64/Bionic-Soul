@@ -14,10 +14,12 @@ public class Player : MonoBehaviour
     private Transform foot;
     public Transform swordSpawn;
     public GameObject bulletPrefab;
+    Grounded grundchereca;
 
     // Start is called before the first frame update
     void Start()
     {
+        grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
         gc = FindObjectOfType(typeof(GameController)) as GameController;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(groundCheck);
         controls();
     }
     void controls()
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
         // Jump
         //groundCheck = Physics2D.OverlapCircle(foot.position, 0.03f);
 
-        if (Input.GetButtonDown("Jump") && groundCheck)
+        if (Input.GetButtonDown("W") && groundCheck)
         {
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
@@ -70,6 +73,7 @@ public class Player : MonoBehaviour
     }
     public void SetGroundCheck(bool grounded)
     {
+        print(grounded);
         groundCheck = grounded;
     }
     void Shoot()
