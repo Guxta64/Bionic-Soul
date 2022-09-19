@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         if (temVisao)
         {
-            //coloca aqui o que tu quer que ele fa�a quando entra na vis�o do inimigo
+            //coloca aqui o que tu quer que ele faça quando entra na vis�o do inimigo
             playerHealth.currentHealth -= 1;
             temVisao = false;
 

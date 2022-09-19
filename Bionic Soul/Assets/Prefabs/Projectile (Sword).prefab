@@ -147,3 +147,6 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: -721105141618935921}
   damage: 1
+  tutoraScript: {fileID: 0}
+  tutorial_3: {fileID: 0}
+  tutorial_4: {fileID: 0}

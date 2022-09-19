@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject tutorial_1, tutorial_2, tutorial_3, tutorial_4, tutorial_5;
-    int textT;
+    public int textT;
     // Start is called before the first frame update
     void Start()
     {
-        textT = 0;
-       
+        textT = 0;     
     }
 
     // Update is called once per frame

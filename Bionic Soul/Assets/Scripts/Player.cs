@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     Grounded grundchereca;
 
+    public bool paraDireita;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,17 @@ public class Player : MonoBehaviour
     {
         print(groundCheck);
         controls();
+
+        if (Input.GetButtonDown("D")) {
+
+            paraDireita = true;
+
+        } else if (Input.GetButtonDown("A")) {
+
+            paraDireita = false;
+
+        }
+
     }
     void controls()
     {  // Left and Right UwU
@@ -64,7 +77,7 @@ public class Player : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
         //BOTÃO DE GATINHO PRA ARMA
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Jump"))
         {
             //GameObject tempprefab = Instantiate(bulletPrefab) as GameObject;
             //tempprefab.transform.position = gameObject.transform.position;

@@ -10,10 +10,27 @@ public class Bulleta : MonoBehaviour
     private GameObject enemy;
     private Enemy enemyScript;
 
+    private GameObject player;
+    private Player playerScript;
+    public GameObject tutorial_3, tutorial_4;
+
     //
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<Player>();
+
+        if (playerScript.paraDireita) {
+
+            rb.velocity = transform.right * speed;
+
+        }else if (!playerScript.paraDireita) {
+
+            transform.localScale = new Vector3(-0.04608959f, 0.04608959f, 0.04608959f);
+            rb.velocity = transform.right * -speed;
+
+        }
     }
 
     private void OnBecameInvisible()
@@ -29,8 +46,11 @@ public class Bulleta : MonoBehaviour
 
 
             //Kill da espada + inimigo
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
             Destroy(gameObject);
+            tutorial_3.SetActive(false);
+            tutorial_4.SetActive(true);
+            
 
         }
     }
