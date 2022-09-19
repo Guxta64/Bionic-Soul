@@ -14,11 +14,12 @@ public class Grounded : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         hero.SetGroundCheck(true);
+       
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
