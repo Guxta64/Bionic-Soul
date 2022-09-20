@@ -17,6 +17,8 @@ public class Bulleta : MonoBehaviour
     //
     void Start()
     {
+        tutorial_3 = GameObject.Find("Tutorial (3)");
+        tutorial_4 = GameObject.Find("Tutorial (4)");
         
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<Player>();
@@ -46,11 +48,10 @@ public class Bulleta : MonoBehaviour
 
 
             //Kill da espada + inimigo
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(collision.gameObject);        
             tutorial_3.SetActive(false);
             tutorial_4.SetActive(true);
-            
+            Destroy(gameObject);
 
         }
     }
