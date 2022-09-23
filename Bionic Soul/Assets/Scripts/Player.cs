@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private SpriteRenderer spritex;
+    public SpriteRenderer spritex;
     public float speedX, jumpStrength;
     public float horizontal;
     private Rigidbody2D body;
@@ -15,12 +15,14 @@ public class Player : MonoBehaviour
     public Transform swordSpawn;
     public GameObject bulletPrefab;
     Grounded grundchereca;
+    Animator anim;
 
     public bool paraDireita;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
@@ -35,38 +37,51 @@ public class Player : MonoBehaviour
        
         controls();
 
-        if (Input.GetButtonDown("D")) {
-
+        if (Input.GetButtonDown("D")) 
+        {
             paraDireita = true;
 
-        } else if (Input.GetButtonDown("A")) {
-
-            paraDireita = false;
+            if(transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
 
         }
+        else if (Input.GetButtonDown("A"))
+        {
+            paraDireita = false;
+            if (transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
 
+        }
     }
     void controls()
     {  // Left and Right UwU
         horizontal = Input.GetAxis("Horizontal");
+        if(horizontal> 0||horizontal < 0)
+        {
+            anim.SetBool("walk", true);
+        }
+        else
+        {
+            anim.SetBool("walk", false);
+        }
+
         body.velocity = new Vector2(horizontal * speedX, body.velocity.y);
 
         //Projectil Rotation
         //bulletPrefab.GetComponent<GameObject>().speed = -1;
         //-----
-        if (horizontal > 0) //direita
+        /*if (horizontal > 0) //direita
         {
-
-            transform.rotation = new Quaternion(0f, 0f, 0f, 0);
-            //BulletPrefab.speed = speed * -1;
-
+          
         }
         if (horizontal < 0) //esquerda
         {
 
-            transform.rotation = new Quaternion(0f, 0f, 0f, 0);
-
-        }
+        }*/
 
 
         // Jump
@@ -79,9 +94,12 @@ public class Player : MonoBehaviour
         //BOTÃO DE GATINHO PRA ARMA
         if (Input.GetButtonDown("Jump"))
         {
-            //GameObject tempprefab = Instantiate(bulletPrefab) as GameObject;
-            //tempprefab.transform.position = gameObject.transform.position;
+            anim.SetBool("shoot", true);
             Shoot();
+        }
+        else
+        {
+            anim.SetBool("shoot", true);
         }
     }
     public void SetGroundCheck(bool grounded)

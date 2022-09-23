@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 7e5ffdbb2bc29564abda6b98ebed4fbb
+guid: ad27d76eebbc24047894268e91a3e92f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3731658903798005642
-    second: Cyborg_jump_0
+      213: -7008412969330441016
+    second: Attack_0
   - first:
-      213: -4391170822400585380
-    second: Cyborg_jump_1
+      213: -7763475090823894447
+    second: Attack_1
   - first:
-      213: 4817185104543597353
-    second: Cyborg_jump_2
-  - first:
-      213: -1752231951277745045
-    second: Cyborg_jump_3
+      213: 302641331129538988
+    second: Attack_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cyborg_jump_0
+      name: Attack_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 6
+        x: 5
+        y: 0
         width: 28
-        height: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8fbdc7700489c330800000000000000
-      internalID: 3731658903798005642
+      spriteID: 8c481db598d1dbe90800000000000000
+      internalID: -7008412969330441016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cyborg_jump_1
+      name: Attack_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 8
-        width: 28
-        height: 29
+        x: 52
+        y: 0
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51d0c6076d6f03c0800000000000000
-      internalID: -4391170822400585380
+      spriteID: 15a29dc9988924490800000000000000
+      internalID: -7763475090823894447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cyborg_jump_2
+      name: Attack_2
       rect:
         serializedVersion: 2
-        x: 98
-        y: 5
-        width: 28
-        height: 31
+        x: 101
+        y: 0
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 923cf9d74541ad240800000000000000
-      internalID: 4817185104543597353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cyborg_jump_3
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 1
-        width: 30
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6c1004f252dea7e0800000000000000
-      internalID: -1752231951277745045
+      spriteID: ca9d35cefa2333400800000000000000
+      internalID: 302641331129538988
       vertices: []
       indices: 
       edges: []
