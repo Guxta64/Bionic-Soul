@@ -6,20 +6,18 @@ using Photon.Pun;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    public InputField createImput;
-    public InputField joinImput;
-    // Start is called before the first frame update
-    public void CreateRoom()
+    public InputField creatInput;
+    public InputField joinInput;
+    public void CreatRoom()
     {
-        PhotonNetwork.CreateRoom(createImput.text);
+        PhotonNetwork.CreateRoom(creatInput.text);
     }
-    public void JoinRoom()
+    public void joinRoom()
     {
-        PhotonNetwork.JoinRoom(joinImput.text);
+        PhotonNetwork.JoinRoom(joinInput.text);
     }
-    public void OnJoinedRooms()
+    public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game");
     }
- 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     Grounded grundchereca;
     Animator anim;
-
+    PhotonView view;
     public bool paraDireita;
 
     // Start is called before the first frame update
@@ -28,14 +29,16 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         gc = FindObjectOfType(typeof(GameController)) as GameController;
         foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
-
+        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        controls();
+        if (view.IsMine)
+        {
+            print("isMIne");
+            controls();
 
         if (Input.GetButtonDown("D")) 
         {
@@ -56,6 +59,9 @@ public class Player : MonoBehaviour
             }
 
         }
+        }
+       
+        
     }
     void controls()
     {  // Left and Right UwU

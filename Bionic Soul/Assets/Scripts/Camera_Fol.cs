@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Camera_Fol : MonoBehaviour
 {
-    public float FollowSpeed = 2f;
-    public float yoffset = 1f;
-    public Transform target;
+    public float FollowSpeed = 5f;
+    public float yoffset = 3f;
+    private Transform target;
+    private GameObject targetGameOBJ;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //Player: Thao strekeeeeer
+        targetGameOBJ = GameObject.Find("Player: " + PhotonNetwork.LocalPlayer.NickName);
+        target = targetGameOBJ.GetComponent<Transform>();
+        PhotonNetwork.LocalPlayer.NickName = "Thao strekeeeeer";
     }
 
     // Update is called once per frame

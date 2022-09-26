@@ -19,7 +19,7 @@ public class ButtonMestre : MonoBehaviour
     }
     public void CoOp()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("Loading");
     }
     public void confirmClick()
     {
