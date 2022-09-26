@@ -17,6 +17,10 @@ public class ButtonMestre : MonoBehaviour
     {
 
     }
+    public void CoOp()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
     public void confirmClick()
     {
         SceneManager.LoadScene("Game");
@@ -47,10 +51,5 @@ public class ButtonMestre : MonoBehaviour
     {
         Musica.SetActive(false);
         slider.SetActive(false);
-    }
-    public void Brilho()
-    {
-        brilho.SetActive(true);
-        BotaoBrilho.SetActive(false);
     }
 }
