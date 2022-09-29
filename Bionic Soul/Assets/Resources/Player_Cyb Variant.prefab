@@ -83,5 +83,13 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.043400478
       objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
