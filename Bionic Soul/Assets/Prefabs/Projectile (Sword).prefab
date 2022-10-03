@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8072073737803307521}
   m_Layer: 0
   m_Name: Projectile (Sword)
-  m_TagString: Untagged
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,5 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: -721105141618935921}
   damage: 1
-  tutoraScript: {fileID: 0}
   tutorial_3: {fileID: 0}
   tutorial_4: {fileID: 0}

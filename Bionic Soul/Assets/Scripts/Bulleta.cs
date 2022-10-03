@@ -13,6 +13,7 @@ public class Bulleta : MonoBehaviour
     private GameObject player;
     private Player playerScript;
     public GameObject tutorial_3, tutorial_4;
+    private Health healthScript;
 
     //
     void Start()
@@ -55,4 +56,5 @@ public class Bulleta : MonoBehaviour
 
         }
     }
+    
 }

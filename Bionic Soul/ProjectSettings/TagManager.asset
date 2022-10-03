@@ -9,6 +9,7 @@ TagManager:
   - Ladder
   - LinhaVisao
   - Coin
+  - Bala
   layers:
   - Default
   - TransparentFX

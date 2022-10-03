@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         //BOTÃO DE GATINHO PRA ARMA
         if (Input.GetButtonDown("Jump"))
         {
-            anim.SetBool("shoot", true);
+           
             Shoot();
         }
         else
@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
     }
     void Shoot()
     {
+        anim.SetTrigger("Shoot");
         Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
     }
 
