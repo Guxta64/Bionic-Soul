@@ -10,6 +10,7 @@ TagManager:
   - LinhaVisao
   - Coin
   - Bala
+  - Inimigo
   layers:
   - Default
   - TransparentFX

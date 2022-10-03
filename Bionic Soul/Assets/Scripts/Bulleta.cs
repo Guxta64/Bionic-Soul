@@ -55,6 +55,10 @@ public class Bulleta : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag("Inimigo"))
+        {
+            Destroy(gameObject);
+        }
     }
     
-}
+} 

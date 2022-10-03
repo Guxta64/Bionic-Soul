@@ -31,9 +31,9 @@ public class Health : MonoBehaviour
         {
             print("recebeudano");
             currentHealth--;
-            if(currentHealth >= 0)
+            if(currentHealth == 0)
             {
-                enemy.SetActive(false);
+                Destroy(enemy);
             }
         }
     }
