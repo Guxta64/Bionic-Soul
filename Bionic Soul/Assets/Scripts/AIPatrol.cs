@@ -13,7 +13,6 @@ public class AIPatrol : MonoBehaviour
 
     Rigidbody2D rb;
     public Transform groundCheckPos;
-    public LayerMask scenaryLayer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,9 +33,10 @@ public class AIPatrol : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-           Flip();
-        
+        if (collision.gameObject.CompareTag("Colisores"))
+        {
+            Flip();
+        }
 
-        
     }
 }

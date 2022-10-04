@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     Animator anim;
     PhotonView view;
     public bool paraDireita;
+    public float firerate, bulletforce;
+    float nextfire;
 
     // Start is called before the first frame update
     void Start()
@@ -40,33 +42,33 @@ public class Player : MonoBehaviour
             print("isMIne");
             controls();
 
-        if (Input.GetButtonDown("D")) 
-        {
-            paraDireita = true;
-
-            if(transform.localScale.x < 0)
+            if (Input.GetButtonDown("D"))
             {
-                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            }
+                paraDireita = true;
 
-        }
-        else if (Input.GetButtonDown("A"))
-        {
-            paraDireita = false;
-            if (transform.localScale.x > 0)
+                if (transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                }
+
+            }
+            else if (Input.GetButtonDown("A"))
             {
-                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            }
+                paraDireita = false;
+                if (transform.localScale.x > 0)
+                {
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                }
 
+            }
         }
-        }
-       
-        
+
+
     }
     void controls()
     {  // Left and Right UwU
         horizontal = Input.GetAxis("Horizontal");
-        if(horizontal> 0||horizontal < 0)
+        if (horizontal > 0 || horizontal < 0)
         {
             anim.SetBool("walk", true);
         }
@@ -100,8 +102,13 @@ public class Player : MonoBehaviour
         //BOTÃO DE GATINHO PRA ARMA
         if (Input.GetButtonDown("Jump"))
         {
-           
-            Shoot();
+            if(Time.time > nextfire)
+            {
+            nextfire = Time.time + firerate;
+            anim.SetTrigger("Shoot");            
+            Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
+            }
+
         }
         else
         {
@@ -112,11 +119,6 @@ public class Player : MonoBehaviour
     {
         print(grounded);
         groundCheck = grounded;
-    }
-    void Shoot()
-    {
-        anim.SetTrigger("Shoot");
-        Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
     }
 
 
