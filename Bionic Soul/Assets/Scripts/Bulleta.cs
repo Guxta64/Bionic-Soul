@@ -27,10 +27,12 @@ public class Bulleta : MonoBehaviour
         if (playerScript.paraDireita) {
 
             rb.velocity = transform.right * speed;
+            transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
 
-        }else if (!playerScript.paraDireita) {
+        }
+        else if (!playerScript.paraDireita) {
 
-            transform.localScale = new Vector3(-0.04608959f, 0.04608959f, 0.04608959f);
+            transform.localScale = new Vector3(-0.03f, 0.03f, 0.03f);
             rb.velocity = transform.right * -speed;
 
         }
@@ -42,19 +44,7 @@ public class Bulleta : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            enemy = collision.gameObject;
-            enemyScript = enemy.GetComponent<Enemy>();
-
-
-            //Kill da espada + inimigo
-            Destroy(collision.gameObject);        
-            tutorial_3.SetActive(false);
-            tutorial_4.SetActive(true);
-            Destroy(gameObject);
-
-        }
+        
         if (collision.gameObject.CompareTag("Inimigo"))
         {
             Destroy(gameObject);

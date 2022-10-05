@@ -20,7 +20,6 @@ public class AIPatrol : MonoBehaviour
     void Update()
     {
             Patrol();
-        print(rb.velocity.x);
     }
     void Patrol()
     {

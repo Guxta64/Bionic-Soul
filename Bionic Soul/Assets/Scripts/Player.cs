@@ -78,23 +78,6 @@ public class Player : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * speedX, body.velocity.y);
-
-        //Projectil Rotation
-        //bulletPrefab.GetComponent<GameObject>().speed = -1;
-        //-----
-        /*if (horizontal > 0) //direita
-        {
-          
-        }
-        if (horizontal < 0) //esquerda
-        {
-
-        }*/
-
-
-        // Jump
-        //groundCheck = Physics2D.OverlapCircle(foot.position, 0.03f);
-
         if (Input.GetButtonDown("W") && groundCheck)
         {
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
@@ -105,14 +88,14 @@ public class Player : MonoBehaviour
             if(Time.time > nextfire)
             {
             nextfire = Time.time + firerate;
-            anim.SetTrigger("Shoot");            
-            Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
+            //anim.SetTrigger("Shoot");            
+            Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);      
             }
 
         }
         else
         {
-            anim.SetBool("shoot", true);
+            //anim.SetBool("shoot", true);
         }
     }
     public void SetGroundCheck(bool grounded)
@@ -121,23 +104,4 @@ public class Player : MonoBehaviour
         groundCheck = grounded;
     }
 
-
-    //CENAS
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //INIMIGO
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            SceneManager.LoadScene("Death");
-            gameObject.SetActive(false);
-        }
-        if (collision.gameObject.CompareTag("Sexo"))
-        {
-            SceneManager.LoadScene("WinScene");
-        }
-        if (collision.gameObject.CompareTag("Game"))
-        {
-            SceneManager.LoadScene("Game");
-        }
-    }*/
 }

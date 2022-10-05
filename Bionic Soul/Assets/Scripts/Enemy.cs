@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
         if (cooldownTimer >= attackCooldown)
         {
             cooldownTimer = 0;
-            //anim.SetTrigger("");
         }
     }
 
