@@ -7,10 +7,17 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth;
     public GameObject enemy;
+    //materiais
+    private Material matWhite;
+    private Material matDefault;
+    SpriteRenderer sr;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+        sr = GetComponent<SpriteRenderer>();
+        matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
+        matDefault = sr.material;
     }
 
     public void takeDamageShot()
@@ -29,13 +36,21 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bala"))
         {
-            print("recebeudano");
             currentHealth--;
+            sr.material = matWhite;
             if(currentHealth == 0)
             {
                 Destroy(enemy);
             }
+            else
+            {
+                Invoke("ResetMaterial", 5f);
+            }
         }
+    }
+    void ResetMaterial()
+    {
+        sr.material = matDefault;
     }
 
 }

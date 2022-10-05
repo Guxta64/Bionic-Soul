@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask PlayerLayer;
     private float cooldownTimer = Mathf.Infinity;
     private float tempo;
+   
 
     //Referencias
     private Animator anim;
@@ -19,8 +20,7 @@ public class Enemy : MonoBehaviour
     private GameObject playerH;
      void Awake()
     {
-
-        playerH = GameObject.Find("Player");
+       playerH = GameObject.Find("Player");
         playerHealth = playerH.GetComponent<Health>();
         //anim = GetComponent<Animator>();
     }
