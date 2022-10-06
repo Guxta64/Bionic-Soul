@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     {
         if (view.IsMine)
         {
-            print("isMIne");
             controls();
 
             if (Input.GetButtonDown("D"))
@@ -100,7 +99,6 @@ public class Player : MonoBehaviour
     }
     public void SetGroundCheck(bool grounded)
     {
-        print(grounded);
         groundCheck = grounded;
     }
 
