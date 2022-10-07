@@ -8,8 +8,8 @@ public class Particle_Enemy : MonoBehaviour
     public float currentHealth;
     public GameObject enemy;
     //materiais
-    private Material matWhite;
-    private Material matDefault;
+    public Material matWhite;
+    public Material matDefault;
     SpriteRenderer sr;
     // Start is called before the first frame update
     void Awake()
@@ -17,7 +17,6 @@ public class Particle_Enemy : MonoBehaviour
         currentHealth = startingHealth;
 
         sr = GetComponent<SpriteRenderer>();
-        matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
         matDefault = sr.material;
     }
 
@@ -27,6 +26,7 @@ public class Particle_Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bala"))
         {
             currentHealth--;
+            matDefault = matWhite;
             sr.material = matWhite;
             if (currentHealth == 0)
             {
@@ -34,13 +34,15 @@ public class Particle_Enemy : MonoBehaviour
             }
             else
             {
-                Invoke("ResetMaterial", 5f);
+                Invoke("ResetMaterial", 1f);
             }
         }
     }
     void ResetMaterial()
     {
+        matWhite = matDefault;        
         sr.material = matDefault;
+
     }
     public void takeDamageShot()
     {

@@ -34,6 +34,7 @@ public class AIPatrol : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Colisores"))
         {
+            print("a");
             Flip();
         }
 
