@@ -37,8 +37,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (view.IsMine)
-        {
             controls();
 
             if (Input.GetButtonDown("D"))
@@ -58,8 +56,6 @@ public class Player : MonoBehaviour
                 {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                 }
-
-            }
         }
 
 

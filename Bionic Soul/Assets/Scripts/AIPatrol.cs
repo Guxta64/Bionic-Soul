@@ -30,11 +30,11 @@ public class AIPatrol : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Colisores"))
+        if (other.gameObject.CompareTag("Colisores"))
         {
-            print("a");
+           
             Flip();
         }
 
