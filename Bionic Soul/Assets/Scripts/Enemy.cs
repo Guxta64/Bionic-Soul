@@ -46,16 +46,15 @@ public class Enemy : MonoBehaviour
        {
            cooldownTimer = 0;
        }
-       if (temVisao)
+       if (gameObject.transform.rotation.x <= 0)
        {
-            print("alo");
            paraDireita = true;
            if (transform.localScale.x < 0)
            {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
            }
        }
-       else if (!temVisao)
+       else
        {
            paraDireita = false;
            if (transform.localScale.x > 0)
@@ -68,7 +67,6 @@ public class Enemy : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            paraDireita = true;            
             temVisao = true;
             Instantiate(ShootPreFab, SpawnBala.position, SpawnBala.rotation);
             

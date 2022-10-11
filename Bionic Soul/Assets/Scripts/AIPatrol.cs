@@ -9,6 +9,9 @@ public class AIPatrol : MonoBehaviour
     [HideInInspector]
     private bool mustTurn;
     public Collider2D bodyCollider;
+    Enemy enemySCR;
+    public GameObject balaprefab;
+    public float speed = 20f, damage;
 
 
     Rigidbody2D rb;
@@ -34,8 +37,8 @@ public class AIPatrol : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Colisores"))
         {
-           
-            Flip();
+            Flip();            
+
         }
 
     }

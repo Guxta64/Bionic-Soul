@@ -12,6 +12,8 @@ TagManager:
   - Bala
   - Inimigo
   - Colisores
+  - ColisorD
+  - ColisorE
   layers:
   - Default
   - TransparentFX

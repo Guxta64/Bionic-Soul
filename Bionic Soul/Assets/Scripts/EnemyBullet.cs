@@ -8,6 +8,7 @@ public class EnemyBullet : MonoBehaviour
     public float speed = 20f, damage;
     private Enemy enemySCR;
     GameObject enemy;
+    private AIPatrol ScriptPT;
     
     // Start is called before the first frame update
     void Start()
@@ -18,18 +19,18 @@ public class EnemyBullet : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {            
+        print(enemySCR.paraDireita);
+
       //  print(enemySCR);
-        if (enemySCR.paraDireita)
+        if ()
         {
-            print("lado um");
             rb.velocity = transform.right * speed;
             transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
         }
         else if (!enemySCR.paraDireita)
         {
-            print("lado outro");
             transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             rb.velocity = transform.right * -speed;
         }
