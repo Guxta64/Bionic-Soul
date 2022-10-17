@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
         print(enemySCR.paraDireita);
 
       //  print(enemySCR);
-        if ()
+        /*if (enemySCR.paraDireita)
         {
             rb.velocity = transform.right * speed;
             transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
@@ -31,8 +31,8 @@ public class EnemyBullet : MonoBehaviour
         }
         else if (!enemySCR.paraDireita)
         {
-            transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             rb.velocity = transform.right * -speed;
-        }
+            transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        }*/
     }
 }

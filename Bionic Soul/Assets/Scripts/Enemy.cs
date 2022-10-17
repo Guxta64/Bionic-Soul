@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
        }
        else
        {
+            print("sex?");
            paraDireita = false;
            if (transform.localScale.x > 0)
            {
@@ -68,7 +69,14 @@ public class Enemy : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             temVisao = true;
-            Instantiate(ShootPreFab, SpawnBala.position, SpawnBala.rotation);
+            GameObject tempPrefab = Instantiate(ShootPreFab, SpawnBala.position, SpawnBala.rotation);
+            if (col.transform.position.x < transform.position.x) 
+            {
+                tempPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(-20, 0);
+            } else if(col.transform.position.x > transform.position.x)
+            {
+                tempPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(20, 0);
+            }
             
         }
     }
