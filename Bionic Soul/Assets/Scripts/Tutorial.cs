@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
-    public GameObject tutorial_1, tutorial_2, tutorial_3, tutorial_4, enemy;
+    public GameObject tutorial_1, tutorial_2, tutorial_3, tutorial_4, enemy, EndT;
     public int textT;
     // Start is called before the first frame update
     void Start()
     {
-        textT = 0;     
+        textT = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
          tutorial();
-        
         
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -59,7 +59,13 @@ public class Tutorial : MonoBehaviour
         if (enemy.gameObject.Equals(null))
         {
             print("sem nada ");
+            EndT.SetActive(true);
             textT++;
+
         }
+    }
+    public void voltamenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
