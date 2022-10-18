@@ -27,8 +27,8 @@ public class EnemyBullet : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
             healthSCP.currentHealth--;
+            Destroy(this.gameObject);
         }
     }
 }

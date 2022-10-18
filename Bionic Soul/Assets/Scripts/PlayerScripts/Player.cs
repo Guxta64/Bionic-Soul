@@ -6,6 +6,10 @@ using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float startingHealth;
+    public float currentHealth;
+    public GameObject bulletPreFab;
+   
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
     public float horizontal;
@@ -24,6 +28,10 @@ public class Player : MonoBehaviour
     Health healthSCP;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        currentHealth = startingHealth;
+    }
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -38,7 +46,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            controls();
+        #region controles de movimentação
+        controls();
 
             if (Input.GetButtonDown("D"))//direita
             {
@@ -57,9 +66,11 @@ public class Player : MonoBehaviour
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                 }
         }
+        #endregion
 
 
     }
+    #region controles de bala e animação
     void controls()
     {  // Left and Right UwU
         horizontal = Input.GetAxis("Horizontal");
@@ -77,7 +88,7 @@ public class Player : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
-        //BOTÃO DE GATINHO PRA ARMA
+        #endregion
         #region Controles de bala
         if (Input.GetButtonDown("Jump"))
         {
@@ -104,5 +115,12 @@ public class Player : MonoBehaviour
     public void SetGroundCheck(bool grounded)
     {
         groundCheck = grounded;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BalaInimigo"))
+        {
+            currentHealth--;
+        }
     }
 }
