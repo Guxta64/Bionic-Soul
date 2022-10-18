@@ -6,10 +6,6 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     public bool temVisao, paraDireita;
-    //[SerializeField] private float damage;
-    //[SerializeField] private float range, timer;
-    //[SerializeField] private float colliderDistance;
-    //[SerializeField] private LayerMask PlayerLayer;
     private float cooldownTimer = Mathf.Infinity;
     private float timer, speed = 20f;
     public Rigidbody2D rb;
@@ -24,9 +20,7 @@ public class Enemy : MonoBehaviour
     private GameObject playerH;
     void Awake()
     {
-        enemy = GameObject.Find("Enemy");
-        playerH = GameObject.Find("Player");
-        playerHealth = playerH.GetComponent<Health>();       
+        enemy = GameObject.Find("Enemy");      
     }
 
     void Update()

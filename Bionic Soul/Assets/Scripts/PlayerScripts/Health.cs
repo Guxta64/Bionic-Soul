@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
+    public GameObject bulletPreFab;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -15,17 +16,7 @@ public class Health : MonoBehaviour
     {
         currentHealth--;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("BalaInimigo"))
-        {
-            currentHealth--;
-            if(currentHealth == 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+   
 
 
 }

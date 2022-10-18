@@ -40,17 +40,16 @@ public class Player : MonoBehaviour
     {
             controls();
 
-            if (Input.GetButtonDown("D"))
+            if (Input.GetButtonDown("D"))//direita
             {
                 paraDireita = true;
-
                 if (transform.localScale.x < 0)
                 {
-                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                 }
 
             }
-            else if (Input.GetButtonDown("A"))
+            else if (Input.GetButtonDown("A"))//esquerda
             {
                 paraDireita = false;
                 if (transform.localScale.x > 0)
@@ -79,31 +78,31 @@ public class Player : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
         //BOTÃO DE GATINHO PRA ARMA
+        #region Controles de bala
         if (Input.GetButtonDown("Jump"))
         {
             if(Time.time > nextfire)
             {
-            nextfire = Time.time + firerate;
-            //anim.SetTrigger("Shoot");            
-            Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);      
+            nextfire = Time.time + firerate; 
+            GameObject tempPreFab = Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
+                tempPreFab.transform.parent = null;
+                if (Input.GetButtonDown("D") || paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor +
+                {
+                   tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * 1000);
+                }
+                else if (Input.GetButtonDown("A") || !paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor -
+                {
+                    tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * -1000);
+                }
+                
             }
 
         }
-        else
-        {
-            //anim.SetBool("shoot", true);
-        }
+        #endregion
+
     }
     public void SetGroundCheck(bool grounded)
     {
         groundCheck = grounded;
     }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("BalaInimigo"))
-        {
-            healthSCP.currentHealth -= 1;
-        }
-    }
-
 }
