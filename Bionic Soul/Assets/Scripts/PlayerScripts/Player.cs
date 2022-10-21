@@ -46,6 +46,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         #region controles de movimentação
         controls();
 
@@ -115,12 +119,14 @@ public class Player : MonoBehaviour
     public void SetGroundCheck(bool grounded)
     {
         groundCheck = grounded;
+        Debug.Log(groundCheck);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BalaInimigo"))
         {
             currentHealth--;
+            Destroy(collision.gameObject);
         }
     }
 }

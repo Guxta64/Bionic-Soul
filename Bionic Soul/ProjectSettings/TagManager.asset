@@ -52,3 +52,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Vida
+    uniqueID: 1023176319
+    locked: 0
