@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab;
+    public GameObject bulletPreFab, gameover, enemy;
    
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
@@ -48,7 +48,11 @@ public class Player : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            gameover.SetActive(true);
+            Time.timeScale = 0;
+            enemy.SetActive(false);
             Destroy(this.gameObject);
+            
         }
         #region controles de movimentação
         controls();
@@ -91,7 +95,9 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("W") && groundCheck)
         {
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
+            anim.SetTrigger("Jump");
         }
+       
         #endregion
         #region Controles de bala
         if (Input.GetButtonDown("Jump"))

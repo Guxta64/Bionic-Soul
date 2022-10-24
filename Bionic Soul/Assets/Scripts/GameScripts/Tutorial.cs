@@ -58,10 +58,9 @@ public class Tutorial : MonoBehaviour
     {
         if (enemy.gameObject.Equals(null))
         {
-            print("sem nada ");
             EndT.SetActive(true);
             textT++;
-
+            Time.timeScale = 0;
         }
     }
     public void voltamenu()
