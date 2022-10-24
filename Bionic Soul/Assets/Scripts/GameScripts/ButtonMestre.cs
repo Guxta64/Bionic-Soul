@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonMestre : MonoBehaviour
 {
-    public GameObject pausa, Objects, Menu, Config, Tutorial, Fps, Musica, slider, brilho, BotaoBrilho;
+    public GameObject pausa, Objects, Menu, Config, Tutorial, slider, playerprefab;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class ButtonMestre : MonoBehaviour
     public void confirmClick()
     {
         SceneManager.LoadScene("Game");
+        DontDestroyOnLoad(Instantiate(playerprefab, new Vector3(185, -10, 0), Quaternion.identity));
     }
     public void voltarMenu()
     {
@@ -45,11 +46,11 @@ public class ButtonMestre : MonoBehaviour
     }
     public void FPS()
     {
-        Fps.SetActive(false);
+        //Fps.SetActive(false);
     }
     public void Mute()
     {
-        Musica.SetActive(false);
+        //Musica.SetActive(false);
         slider.SetActive(false);
     }
     public void tutorial()

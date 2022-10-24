@@ -1522,6 +1522,7 @@ MonoBehaviour:
   slider: {fileID: 899185956}
   brilho: {fileID: 407973118}
   BotaoBrilho: {fileID: 0}
+  playerprefab: {fileID: 7960540670117447538, guid: b0f95df09c0e4d5499827568212ec707, type: 3}
 --- !u!4 &960397573
 Transform:
   m_ObjectHideFlags: 0
