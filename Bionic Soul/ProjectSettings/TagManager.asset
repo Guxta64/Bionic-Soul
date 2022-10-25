@@ -55,3 +55,6 @@ TagManager:
   - name: Vida
     uniqueID: 1023176319
     locked: 0
+  - name: Pause e GO
+    uniqueID: 1467452273
+    locked: 0

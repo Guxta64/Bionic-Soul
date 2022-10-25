@@ -15,7 +15,7 @@ public class ButtonMestre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
     }
     public void CoOp()
     {
@@ -55,5 +55,11 @@ public class ButtonMestre : MonoBehaviour
     public void tutorial()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+    public void pauseGame()
+    {
+        
+        pausa.SetActive(false);
+        Time.timeScale = 1;
     }
 }

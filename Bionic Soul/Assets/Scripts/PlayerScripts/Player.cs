@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy;
+    public GameObject bulletPreFab, gameover, enemy, pause;
    
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         gc = FindObjectOfType(typeof(GameController)) as GameController;
         foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
         view = GetComponent<PhotonView>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -49,13 +50,19 @@ public class Player : MonoBehaviour
         if(currentHealth <= 0)
         {
             gameover.SetActive(true);
-            Time.timeScale = 0;
             enemy.SetActive(false);
+            Time.timeScale = 0;
             Destroy(this.gameObject);
             
         }
         #region controles de movimentação
         controls();
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            pause.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
 
             if (Input.GetButtonDown("D"))//direita
             {
@@ -80,7 +87,7 @@ public class Player : MonoBehaviour
     }
     #region controles de bala e animação
     void controls()
-    {  // Left and Right UwU
+    {
         horizontal = Input.GetAxis("Horizontal");
         if (horizontal > 0 || horizontal < 0)
         {
@@ -124,8 +131,7 @@ public class Player : MonoBehaviour
     }
     public void SetGroundCheck(bool grounded)
     {
-        groundCheck = grounded;
-        Debug.Log(groundCheck);
+        groundCheck = grounded;    
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
