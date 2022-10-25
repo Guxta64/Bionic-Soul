@@ -10,6 +10,7 @@ public class AIPatrol : MonoBehaviour
     private bool mustTurn;
     public Collider2D bodyCollider;
     Enemy enemySCR;
+    public GameObject balaprefab;
     public float speed = 20f, damage;
 
 
