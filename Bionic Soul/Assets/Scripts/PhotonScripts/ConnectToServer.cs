@@ -8,7 +8,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
 {
     public InputField usernameInput;
     public Text buttonText;
-    public GameObject painelLobby;
+    public GameObject painelLobby, painelCon;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,9 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         }
     }
     public override void OnConnectedToMaster()
-    {
+    {        
+        painelCon.SetActive(false);
         painelLobby.SetActive(true);
+
     }
 }
