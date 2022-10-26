@@ -23,13 +23,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
     public void OnclickCreate()
     {
         if(roomInputField.text.Length >= 1)
         {
-            PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = 2 });
+            PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = 3 });
         }
     }
     public override void OnJoinedRoom()
@@ -51,7 +51,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomItemsList.Clear();
         foreach(RoomInfo room in list)
         {
-           RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
+            RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
             newRoom.SetRoomName(room.Name);
             roomItemsList.Add(newRoom);
         }
