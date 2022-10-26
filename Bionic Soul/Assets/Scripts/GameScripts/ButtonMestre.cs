@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonMestre : MonoBehaviour
 {
-    public GameObject pausa, Objects, Menu, Config, Tutorial, Fps, Musica, slider, brilho, BotaoBrilho;
+    public GameObject pausa, Objects, Menu, Config, Tutorial, Fps, Musica, slider, brilho, BotaoBrilho, createRoomPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,8 @@ public class ButtonMestre : MonoBehaviour
     }
     public void CoOp()
     {
-        SceneManager.LoadScene("ConnectedToServer");
+        Menu.SetActive(false);
+        createRoomPanel.SetActive(true);
     }
     public void confirmClick()
     {
