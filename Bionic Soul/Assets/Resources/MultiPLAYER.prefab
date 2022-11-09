@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155110, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_Name
-      value: Player_Cyb Variant
+      value: MultiPLAYER
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_RootOrder
@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.016918251
       objectReference: {fileID: 0}
+    - target: {fileID: 7166514838109155117, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155119, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_Size.x
       value: 0.10105707
@@ -84,12 +88,77 @@ PrefabInstance:
       value: 0.043400478
       objectReference: {fileID: 0}
     - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SynchronizeLayers.Array.data[1].LayerIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7337360903726935312, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+--- !u!1 &9076512744131781226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7166514838109155110, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+  m_PrefabInstance: {fileID: 2198551594495642956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9076512744410183318 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7166514838923377626, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+  m_PrefabInstance: {fileID: 2198551594495642956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3961402595789968126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076512744131781226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771c51e2167199849ab503762ba06cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  currentHealth: 0
+  bulletPreFab: {fileID: 0}
+  gameover: {fileID: 0}
+  enemy: {fileID: 0}
+  pause: {fileID: 0}
+  spritex: {fileID: 0}
+  speedX: 4
+  jumpStrength: 7
+  horizontal: 2
+  swordSpawn: {fileID: 9076512744410183318}
+  bulletPrefab: {fileID: 2780170706745582418, guid: 3085dd9dd23aebd42a1677a28383b8f3, type: 3}
+  paraDireita: 0
+  firerate: 0.5
+  bulletforce: 15

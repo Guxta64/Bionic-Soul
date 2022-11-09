@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 
-public class Player : MonoBehaviour
+public class Playerteste : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
     public GameObject bulletPreFab, gameover, enemy, pause;
-   
+    private Playerteste hero;
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
     public float horizontal;
@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     private Transform foot;
     public Transform swordSpawn;
     public GameObject bulletPrefab;
-    Grounded grundchereca;
     Animator anim;
     PhotonView view;
     public bool paraDireita;
@@ -27,15 +26,14 @@ public class Player : MonoBehaviour
     float nextfire;
     Health healthSCP;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         currentHealth = startingHealth;
     }
     void Start()
     {
+        hero = GetComponentInParent<Playerteste>();
         anim = GetComponent<Animator>();
-        grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
         gc = FindObjectOfType(typeof(GameController)) as GameController;
@@ -49,31 +47,36 @@ public class Player : MonoBehaviour
     {
         if (view.IsMine)
         {
-            controls();
-        }
-        if (currentHealth <= 0)
-        {
-            gameover.SetActive(true);
-            enemy.SetActive(false);
-            Time.timeScale = 0;
-            Destroy(this.gameObject);
+
             
-        }
-        #region controles de movimentação
-        controls();
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            pause.SetActive(true);
-            Time.timeScale = 0;
-        }
-        
+            if (currentHealth <= 0)
+            {
+                gameover.SetActive(true);
+                enemy.SetActive(false);
+                Time.timeScale = 0;
+                Destroy(this.gameObject);
+
+            }
+            #region controles de movimentação
+            controls();
+            if (Input.GetButtonDown("W") && groundCheck)
+            {
+                body.velocity = new Vector2(body.velocity.x, jumpStrength);
+                anim.SetTrigger("Jump");
+            }
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                pause.SetActive(true);
+                Time.timeScale = 0;
+            }
+
 
             if (Input.GetButtonDown("D"))//direita
             {
                 paraDireita = true;
                 if (transform.localScale.x < 0)
                 {
-                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                 }
 
             }
@@ -84,6 +87,7 @@ public class Player : MonoBehaviour
                 {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                 }
+            }
         }
         #endregion
 
@@ -103,30 +107,26 @@ public class Player : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * speedX, body.velocity.y);
-        if (Input.GetButtonDown("W") && groundCheck)
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpStrength);
-            anim.SetTrigger("Jump");
-        }
        
+
         #endregion
         #region Controles de bala
         if (Input.GetButtonDown("Jump"))
         {
-            if(Time.time > nextfire)
+            if (Time.time > nextfire)
             {
-            nextfire = Time.time + firerate; 
-            GameObject tempPreFab = Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
+                nextfire = Time.time + firerate;
+                GameObject tempPreFab = Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
                 tempPreFab.transform.parent = null;
                 if (Input.GetButtonDown("D") || paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor +
                 {
-                   tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * 1000);
+                    tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * 1000);
                 }
                 else if (Input.GetButtonDown("A") || !paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor -
                 {
                     tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * -1000);
                 }
-                
+
             }
 
         }
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
     }
     public void SetGroundCheck(bool grounded)
     {
-        groundCheck = grounded;    
+        groundCheck = grounded;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -144,5 +144,13 @@ public class Player : MonoBehaviour
             currentHealth--;
             Destroy(collision.gameObject);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        hero.SetGroundCheck(true);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        hero.SetGroundCheck(false);
     }
 }

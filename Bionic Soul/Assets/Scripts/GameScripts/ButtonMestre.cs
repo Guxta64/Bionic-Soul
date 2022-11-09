@@ -19,8 +19,7 @@ public class ButtonMestre : MonoBehaviour
     }
     public void CoOp()
     {
-        Menu.SetActive(false);
-        createRoomPanel.SetActive(true);
+        SceneManager.LoadScene("Loading");
     }
     public void confirmClick()
     {
