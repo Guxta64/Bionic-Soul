@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause;
+    public GameObject bulletPreFab, gameover, enemy, pause, win;
    
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
@@ -139,6 +139,10 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Win"))
+        {
+            win.SetActive(true);
+        }
         if (collision.CompareTag("BalaInimigo"))
         {
             currentHealth--;
