@@ -51,10 +51,10 @@ public class Playerteste : MonoBehaviour
             
             if (currentHealth <= 0)
             {
-                gameover.SetActive(true);
+                /*gameover.SetActive(true);
                 enemy.SetActive(false);
                 Time.timeScale = 0;
-                Destroy(this.gameObject);
+                Destroy(this.gameObject);*/
 
             }
             #region controles de movimentação
@@ -141,7 +141,7 @@ public class Playerteste : MonoBehaviour
     {
         if (collision.CompareTag("BalaInimigo"))
         {
-            currentHealth--;
+            currentHealth -= 0.2f;
             Destroy(collision.gameObject);
         }
     }

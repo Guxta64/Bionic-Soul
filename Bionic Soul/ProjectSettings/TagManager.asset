@@ -15,6 +15,7 @@ TagManager:
   - ColisorD
   - ColisorE
   - BalaInimigo
+  - PlayerMul
   layers:
   - Default
   - TransparentFX
