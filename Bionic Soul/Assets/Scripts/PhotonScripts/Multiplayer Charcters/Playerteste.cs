@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class Playerteste : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Playerteste : MonoBehaviour
     public float firerate, bulletforce;
     float nextfire;
     Health healthSCP;
+    public Image barradeVida;
 
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class Playerteste : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (view.IsMine)
         {
 
@@ -89,6 +92,7 @@ public class Playerteste : MonoBehaviour
                 }
             }
         }
+        barradeVida.fillAmount = currentHealth/10;
         #endregion
 
 
@@ -141,7 +145,7 @@ public class Playerteste : MonoBehaviour
     {
         if (collision.CompareTag("BalaInimigo"))
         {
-            currentHealth -= 0.2f;
+            currentHealth -= 1;
             Destroy(collision.gameObject);
         }
     }

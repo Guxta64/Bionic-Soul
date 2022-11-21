@@ -13,12 +13,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4034358105322369351, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: ObservedComponents.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4034358105322369351, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: ObservedComponents.Array.data[2]
       value: 
-      objectReference: {fileID: 5770057359103411757}
+      objectReference: {fileID: -9026518532005937938}
     - target: {fileID: 4034358105322369351, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: ObservedComponents.Array.data[3]
       value: 
@@ -169,6 +169,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7166514838923377626, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
   m_PrefabInstance: {fileID: 2198551594495642956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-9026518532005937938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076512744131781226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3961402595789968126
 MonoBehaviour:
   m_ObjectHideFlags: 0
