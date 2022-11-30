@@ -35,4 +35,8 @@ public class Conectar : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRoom(nomesala);
     }
+    public void MudaNick(string nickname)
+    {
+        PhotonNetwork.NickName = nickname;
+    }
 }
