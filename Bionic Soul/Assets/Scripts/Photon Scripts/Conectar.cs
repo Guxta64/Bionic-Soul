@@ -39,4 +39,13 @@ public class Conectar : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.NickName = nickname;
     }
+    public string ObterListaDeJogadores()
+    {
+        var lista = " ";
+        foreach(var player in PhotonNetwork.PlayerList)
+        {
+            lista += player.NickName + "\n";
+        }
+        return lista;
+    }
 }
