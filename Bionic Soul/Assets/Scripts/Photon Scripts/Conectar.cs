@@ -48,4 +48,19 @@ public class Conectar : MonoBehaviourPunCallbacks
         }
         return lista;
     }
+    public bool DonoDaSala()
+    {
+        return PhotonNetwork.IsMasterClient; 
+    }
+    public void SairDoLobby()
+    {
+        PhotonNetwork.LeaveRoom();
+    
+    }
+
+    [PunRPC]
+    public void ComecaJogo()
+    {
+        PhotonNetwork.LoadLevel(2);
+    }
 }

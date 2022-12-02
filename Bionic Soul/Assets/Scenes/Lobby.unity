@@ -285,9 +285,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 331895215}
-        m_TargetAssemblyTypeName: MenuEntrada, Assembly-CSharp
-        m_MethodName: CriarSala
+      - m_Target: {fileID: 1973072074}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: SairDoLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1204,7 +1204,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1178537735}
   m_Father: {fileID: 1903761010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1355,16 +1356,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178537734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1903761010}
-  m_RootOrder: 3
+  m_Father: {fileID: 863834177}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.4127, y: 104.56}
+  m_AnchoredPosition: {x: -0.001850605, y: -0.0008544922}
   m_SizeDelta: {x: 917.65, y: 796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178537736
@@ -1419,6 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214291829}
   - component: {fileID: 1214291828}
+  - component: {fileID: 1214291830}
   m_Layer: 0
   m_Name: Gestor de rede
   m_TagString: Untagged
@@ -1452,6 +1454,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214291830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214291827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 999
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1280858798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,16 +1702,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 331895215}
-        m_TargetAssemblyTypeName: MenuEntrada, Assembly-CSharp
-        m_MethodName: EntrarSala
-        m_Mode: 1
+      - m_Target: {fileID: 1973072074}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ComecaJogo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Multiplayer
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1568673638
@@ -1939,13 +1963,14 @@ GameObject:
   - component: {fileID: 1903761013}
   - component: {fileID: 1903761012}
   - component: {fileID: 1903761011}
+  - component: {fileID: 1903761014}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1903761010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1960,7 +1985,6 @@ RectTransform:
   - {fileID: 863834177}
   - {fileID: 1568673636}
   - {fileID: 54673709}
-  - {fileID: 1178537735}
   m_Father: {fileID: 773651539}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2030,6 +2054,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1903761014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903761009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa90bf6e3fd84b34fa6ec92bd2ae0e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListadeJogadores: {fileID: 1178537736}
+  _comecaJogo: {fileID: 1568673637}
 --- !u!1 &1973072072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973072073}
   - component: {fileID: 1973072074}
+  - component: {fileID: 1973072075}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -2079,6 +2118,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuEntrada: {fileID: 331895215}
+  _menuLobby: {fileID: 1903761014}
+--- !u!114 &1973072075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973072072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2020243733
 GameObject:
   m_ObjectHideFlags: 0
