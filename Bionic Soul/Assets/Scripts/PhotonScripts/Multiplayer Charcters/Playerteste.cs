@@ -25,12 +25,11 @@ public class Playerteste : MonoBehaviour
     public bool paraDireita;
     public float firerate, bulletforce;
     float nextfire;
-    Health healthSCP;
     public Image barradeVida;
 
     private void Awake()
     {
-        currentHealth = startingHealth;
+
     }
     void Start()
     {
@@ -92,7 +91,6 @@ public class Playerteste : MonoBehaviour
                 }
             }
         }
-        barradeVida.fillAmount = currentHealth/10;
         #endregion
 
 

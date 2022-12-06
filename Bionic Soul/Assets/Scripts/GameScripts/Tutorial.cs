@@ -27,6 +27,7 @@ public class Tutorial : MonoBehaviour
         {
             textT = textT + 1;
             Destroy(other.gameObject);
+            print(textT);
         }
     }
     void tutorial()
@@ -40,12 +41,11 @@ public class Tutorial : MonoBehaviour
             case 2:
                 tutorial_2.SetActive(false);
                 tutorial_3.SetActive(true);
-                enemydetect(true);
                 break;
             case 3:
                 tutorial_3.SetActive(false);
                 tutorial_4.SetActive(true);
-                
+                enemydetect(true);
                 break;
             case 4:
                 break;

@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private Transform foot;
     public Transform swordSpawn;
     public GameObject bulletPrefab;
-    Grounded grundchereca;
+    //Grounded grundchereca;
     Animator anim;
     PhotonView view;
     public bool paraDireita;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        grundchereca = GetComponent<Grounded>();
+        //grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
         gc = FindObjectOfType(typeof(GameController)) as GameController;
@@ -148,5 +148,13 @@ public class Player : MonoBehaviour
             currentHealth--;
             Destroy(collision.gameObject);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        SetGroundCheck(true);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        SetGroundCheck(false);
     }
 }

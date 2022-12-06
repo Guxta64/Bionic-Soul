@@ -38,7 +38,7 @@ public class Ladder : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isLadder = true;
-            gameObject.GetComponentInChildren<Grounded>().enabled = false;
+            //gameObject.GetComponentInChildren<Grounded>().enabled = false;
         }
     }
 
@@ -46,6 +46,6 @@ public class Ladder : MonoBehaviour
     {
         isLadder = false;
         isClimbing = false;
-        gameObject.GetComponentInChildren<Grounded>().enabled = true;
+       // gameObject.GetComponentInChildren<Grounded>().enabled = true;
     }
 }

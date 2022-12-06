@@ -41,23 +41,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.108783
+      value: 5.9232035
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 11.108783
+      value: 5.9232035
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.108783
+      value: 5.9232035
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3141
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.325
+      value: 1.1323
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155112, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,6 +158,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7166514838109155117, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
     - {fileID: 7166514838109155119, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+    - {fileID: 7166514839641061255, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
 --- !u!1 &9076512744131781226 stripped
 GameObject:
@@ -205,13 +206,14 @@ MonoBehaviour:
   pause: {fileID: 0}
   spritex: {fileID: 0}
   speedX: 4
-  jumpStrength: 7
+  jumpStrength: 8
   horizontal: 2
   swordSpawn: {fileID: 9076512744410183318}
   bulletPrefab: {fileID: 2780170706745582418, guid: 3085dd9dd23aebd42a1677a28383b8f3, type: 3}
   paraDireita: 0
   firerate: 0.5
   bulletforce: 15
+  barradeVida: {fileID: 0}
 --- !u!114 &5770057359103411757
 MonoBehaviour:
   m_ObjectHideFlags: 0
