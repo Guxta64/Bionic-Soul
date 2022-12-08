@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine.UI;
 
-public class Playerteste : MonoBehaviour
+public class Playerteste : MonoBehaviourPunCallbacks
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause;
+    public GameObject bulletPreFab, gameover, enemy, pause, win, lose;
     private Playerteste hero;
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
@@ -116,7 +117,7 @@ public class Playerteste : MonoBehaviour
        
 
         #endregion
-        #region Controles de bala
+        /*#region Controles de bala
         if (Input.GetButtonDown("Jump"))
         {
             if (Time.time > nextfire)
@@ -136,7 +137,7 @@ public class Playerteste : MonoBehaviour
             }
 
         }
-        #endregion
+        #endregion*/
 
     }
     public void SetGroundCheck(bool grounded)
@@ -145,15 +146,18 @@ public class Playerteste : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("BalaInimigo"))
+        if (view.IsMine)
         {
-            currentHealth -= 1;
-            Destroy(collision.gameObject);
-        }
-        if (collision.CompareTag("Moeda"))
-        {
-            pontos++;
-            Destroy(collision.gameObject);
+            if (collision.CompareTag("BalaInimigo"))
+            {
+                currentHealth -= 1;
+                Destroy(collision.gameObject);
+            }
+            if (collision.CompareTag("Moeda"))
+            {
+                pontos++;
+                //Destroy(collision.gameObject);
+            }
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
