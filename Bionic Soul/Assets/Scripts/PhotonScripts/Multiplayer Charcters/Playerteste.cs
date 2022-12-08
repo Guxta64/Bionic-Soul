@@ -23,9 +23,10 @@ public class Playerteste : MonoBehaviour
     Animator anim;
     PhotonView view;
     public bool paraDireita;
-    public float firerate, bulletforce;
+    public float firerate, bulletforce, pontos;
     float nextfire;
     public Image barradeVida;
+    public Text pontuacao;
 
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class Playerteste : MonoBehaviour
         foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
         view = GetComponent<PhotonView>();
         Time.timeScale = 1;
+        GameObject tutut = GameObject.Find("Text");
+        pontuacao = tutut.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -91,6 +94,7 @@ public class Playerteste : MonoBehaviour
                 }
             }
         }
+        pontuacao.text = ($"Pontos: {pontos}/10");
         #endregion
 
 
@@ -144,6 +148,11 @@ public class Playerteste : MonoBehaviour
         if (collision.CompareTag("BalaInimigo"))
         {
             currentHealth -= 1;
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Moeda"))
+        {
+            pontos++;
             Destroy(collision.gameObject);
         }
     }

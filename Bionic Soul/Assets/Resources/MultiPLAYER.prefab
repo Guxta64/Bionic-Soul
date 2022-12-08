@@ -213,7 +213,9 @@ MonoBehaviour:
   paraDireita: 0
   firerate: 0.5
   bulletforce: 15
+  pontos: 0
   barradeVida: {fileID: 0}
+  pontuacao: {fileID: 0}
 --- !u!114 &5770057359103411757
 MonoBehaviour:
   m_ObjectHideFlags: 0
