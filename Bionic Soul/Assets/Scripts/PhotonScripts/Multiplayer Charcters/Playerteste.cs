@@ -45,6 +45,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
         Time.timeScale = 1;
         GameObject tutut = GameObject.Find("Text");
         pontuacao = tutut.GetComponent<Text>();
+        win = GameObject.Find("Vitoria");
     }
 
     // Update is called once per frame
@@ -95,7 +96,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
                 }
             }
         }
-        pontuacao.text = ($"Pontos: {pontos}/10");
+        //pontuacao.text = ($"Pontos: {pontos}/10");
         #endregion
 
 
@@ -146,19 +147,41 @@ public class Playerteste : MonoBehaviourPunCallbacks
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (view.IsMine)
+        if (photonView.IsMine)
         {
             if (collision.CompareTag("BalaInimigo"))
             {
                 currentHealth -= 1;
+
                 Destroy(collision.gameObject);
             }
+
+
             if (collision.CompareTag("Moeda"))
             {
+
                 pontos++;
-                //Destroy(collision.gameObject);
+               // photonView.RPC("cadela", RpcTarget.All, "pontos");
+                pontuacao.text = ($"Pontos: {pontos}/10");
+                GameObject pedro = collision.gameObject;
+                destrui(pedro);
+                
+            }
+            if (collision.CompareTag("Win") && pontos >10)
+            {
+                print("colidiu");
+                Win();
             }
         }
+     }   
+ 
+    public void destrui(GameObject Ponto)
+    {
+        Destroy(Ponto);
+    }
+    public void Win()
+    {
+        win.SetActive(true);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
