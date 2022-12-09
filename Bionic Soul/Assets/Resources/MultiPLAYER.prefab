@@ -204,7 +204,7 @@ MonoBehaviour:
   gameover: {fileID: 0}
   enemy: {fileID: 0}
   pause: {fileID: 0}
-  win: {fileID: 0}
+  vitoria: {fileID: 0}
   lose: {fileID: 0}
   spritex: {fileID: 0}
   speedX: 4

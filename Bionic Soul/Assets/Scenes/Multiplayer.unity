@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 650550242}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Win
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2060,7 +2060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1384592064
 RectTransform:
   m_ObjectHideFlags: 0

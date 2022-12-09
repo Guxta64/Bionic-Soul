@@ -10,7 +10,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause, win, lose;
+    public GameObject bulletPreFab, gameover, enemy, pause, vitoria, lose, winC;
     private Playerteste hero;
     public SpriteRenderer spritex;
     public float speedX, jumpStrength;
@@ -45,7 +45,9 @@ public class Playerteste : MonoBehaviourPunCallbacks
         Time.timeScale = 1;
         GameObject tutut = GameObject.Find("Text");
         pontuacao = tutut.GetComponent<Text>();
-        win = GameObject.Find("Vitoria");
+        vitoria = GameObject.Find("Vitoria");
+        vitoria.SetActive(false);
+        winC = GameObject.Find("Win");
     }
 
     // Update is called once per frame
@@ -167,7 +169,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
                 destrui(pedro);
                 
             }
-            if (collision.CompareTag("Win") && pontos >10)
+            if (collision.CompareTag("WinC") && pontos >= 10)
             {
                 print("colidiu");
                 Win();
@@ -181,7 +183,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
     }
     public void Win()
     {
-        win.SetActive(true);
+        vitoria.SetActive(true);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

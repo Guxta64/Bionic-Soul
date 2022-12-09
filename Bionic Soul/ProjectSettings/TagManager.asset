@@ -18,6 +18,7 @@ TagManager:
   - PlayerMul
   - Win
   - Moeda
+  - WinC
   layers:
   - Default
   - TransparentFX
