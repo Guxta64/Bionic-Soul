@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        //grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
         Time.timeScale = 1;
