@@ -58,7 +58,6 @@ public class ButtonMestre : MonoBehaviour
     }
     public void pauseGame()
     {
-        
         pausa.SetActive(false);
         Time.timeScale = 1;
     }

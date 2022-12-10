@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public Collider2D bodyCollider;
     void Awake()
     {
+        gameObject.transform.localScale = new Vector2(transform.localScale.x * 1, transform.localScale.y);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour
     }
     void Flip()
     {
-        gameObject.transform.localScale = new Vector2(transform.localScale.x * 1, transform.localScale.y);
+        gameObject.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
     }
 

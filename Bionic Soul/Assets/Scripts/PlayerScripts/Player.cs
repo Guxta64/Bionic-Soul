@@ -6,25 +6,15 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause, win;
-   
+    public GameObject bulletPreFab, gameover, enemy, pause, win, bulletPrefab;
     public SpriteRenderer spritex;
-    public float speedX, jumpStrength;
-    public float horizontal;
-    private Rigidbody2D body;
-    private GameController gc;
+    public float speedX, jumpStrength, horizontal, firerate, bulletforce;
+    [SerializeField]private Rigidbody2D body;
     private bool groundCheck;
-    private Transform foot;
     public Transform swordSpawn;
-    public GameObject bulletPrefab;
-    //Grounded grundchereca;
     Animator anim;
     public bool paraDireita;
-    public float firerate, bulletforce;
     float nextfire;
-    Health healthSCP;
-
-    // Start is called before the first frame update
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -35,8 +25,6 @@ public class Player : MonoBehaviour
         //grundchereca = GetComponent<Grounded>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
-        gc = FindObjectOfType(typeof(GameController)) as GameController;
-        foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
         Time.timeScale = 1;
     }
 

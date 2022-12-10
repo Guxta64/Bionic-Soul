@@ -13,12 +13,9 @@ public class Playerteste : MonoBehaviourPunCallbacks
     public SpriteRenderer spritex;
     public float speedX, jumpStrength, horizontal, pontos;
     private Rigidbody2D body;
-    private GameController gc;
     private bool groundCheck;
-    private Transform foot;
     Animator anim;
     PhotonView view;
-    public bool paraDireita;
     public Text pontuacao;
 
     private void Awake()
@@ -31,8 +28,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
         anim = GetComponent<Animator>();
         spritex = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
-        gc = FindObjectOfType(typeof(GameController)) as GameController;
-        foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
         view = GetComponent<PhotonView>();
         Time.timeScale = 1;
         GameObject tutut = GameObject.Find("Text");
@@ -43,7 +38,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
         jogo = GameObject.Find("Jogo");
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -60,7 +54,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
 
             if (Input.GetButtonDown("D"))//direita
             {
-                paraDireita = true;
                 if (transform.localScale.x < 0)
                 {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -70,7 +63,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
 
             else if (Input.GetButtonDown("A"))//esquerda
             {
-                paraDireita = false;
                 if (transform.localScale.x > 0)
                 {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -110,7 +102,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
         {
             if (collision.CompareTag("Moeda"))
             {
-
                 pontos++;
                 pontuacao.text = ($"Pontos: {pontos}/10");
                 GameObject moeda = collision.gameObject;
