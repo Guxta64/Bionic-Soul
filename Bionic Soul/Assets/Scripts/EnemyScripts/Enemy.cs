@@ -12,12 +12,7 @@ public class Enemy : MonoBehaviour
     private GameObject enemy;
     public GameObject ShootPreFab;
     public Transform SpawnBala;
-   
 
-    //Referencias
-    private Animator anim;
-    private Health playerHealth;
-    private GameObject playerH;
     void Awake()
     {
         enemy = GameObject.Find("Enemy");      

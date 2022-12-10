@@ -10,9 +10,9 @@ public class Camera_Fol : MonoBehaviour
     public Transform target;
     public bool SeguirCamera;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame

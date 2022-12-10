@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Photon.Pun;
-
 public class Player : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
@@ -21,7 +19,6 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     //Grounded grundchereca;
     Animator anim;
-    PhotonView view;
     public bool paraDireita;
     public float firerate, bulletforce;
     float nextfire;
@@ -40,17 +37,13 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         gc = FindObjectOfType(typeof(GameController)) as GameController;
         foot = GameObject.FindGameObjectWithTag("groundCheck").transform;
-        view = GetComponent<PhotonView>();
         Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (view.IsMine)
-        {
             controls();
-        }
         if (currentHealth <= 0)
         {
             gameover.SetActive(true);
