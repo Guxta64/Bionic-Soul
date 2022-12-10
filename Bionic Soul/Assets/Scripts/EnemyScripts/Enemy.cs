@@ -6,20 +6,22 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     public bool temVisao, paraDireita;
-    private float cooldownTimer = Mathf.Infinity;
-    private float timer;
+    private float cooldownTimer = Mathf.Infinity, timer;
     public Rigidbody2D rb;
-    private GameObject enemy;
     public GameObject ShootPreFab;
     public Transform SpawnBala;
+    private float walkSpeed = -4;
 
+    [HideInInspector]
+    public Collider2D bodyCollider;
     void Awake()
     {
-        enemy = GameObject.Find("Enemy");      
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        Patrol();
        timer -= Time.deltaTime;
        if (temVisao)
        {
@@ -46,7 +48,20 @@ public class Enemy : MonoBehaviour
             }
             
         }
+        if (col.CompareTag("Colisores"))
+        {
+            Flip();
+        }
         
+    }
+    void Patrol()
+    {
+        rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
+    }
+    void Flip()
+    {
+        gameObject.transform.localScale = new Vector2(transform.localScale.x * 1, transform.localScale.y);
+        walkSpeed *= -1;
     }
 
 }
