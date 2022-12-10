@@ -14,9 +14,6 @@ public class Bulleta : MonoBehaviour
     private Player playerScript;
     public GameObject tutorial_3, tutorial_4, inimigoTutorial;
     private Health healthScript;
-    private Playerteste plmu;
-
-    //
     void Start()
     {
         tutorial_3 = GameObject.Find("Tutorial (3)");
@@ -34,12 +31,7 @@ public class Bulleta : MonoBehaviour
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("PlayerMul"))
-        {
-            plmu.currentHealth -= 0.1f;
-        }
-        
+    {       
         if (collision.gameObject.CompareTag("Inimigo"))
         {
             Destroy(gameObject);

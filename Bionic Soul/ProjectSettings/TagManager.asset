@@ -19,6 +19,8 @@ TagManager:
   - Win
   - Moeda
   - WinC
+  - Bullet
+  - Laser
   layers:
   - Default
   - TransparentFX

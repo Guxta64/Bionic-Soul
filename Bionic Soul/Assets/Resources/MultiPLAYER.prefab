@@ -91,13 +91,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166514838109155113, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155114, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_Size.x
       value: 0.10616852
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155114, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3015592
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166514838109155114, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_Offset.x
-      value: 0.016918251
+      value: 0.01691825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166514838109155114, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07740331
       objectReference: {fileID: 0}
     - target: {fileID: 7166514838109155117, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
       propertyPath: m_Enabled
@@ -165,11 +177,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7166514838109155110, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
   m_PrefabInstance: {fileID: 2198551594495642956}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9076512744410183318 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7166514838923377626, guid: 9f3c79b43e61c3a4385a995f56ff1d8e, type: 3}
-  m_PrefabInstance: {fileID: 2198551594495642956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &-9026518532005937938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,25 +205,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771c51e2167199849ab503762ba06cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
-  currentHealth: 0
   bulletPreFab: {fileID: 0}
   gameover: {fileID: 0}
   enemy: {fileID: 0}
   pause: {fileID: 0}
   vitoria: {fileID: 0}
   lose: {fileID: 0}
+  winC: {fileID: 0}
+  jogo: {fileID: 0}
   spritex: {fileID: 0}
   speedX: 4
   jumpStrength: 8
   horizontal: 2
-  swordSpawn: {fileID: 9076512744410183318}
-  bulletPrefab: {fileID: 2780170706745582418, guid: 3085dd9dd23aebd42a1677a28383b8f3, type: 3}
-  paraDireita: 0
-  firerate: 0.5
-  bulletforce: 15
   pontos: 0
-  barradeVida: {fileID: 0}
+  paraDireita: 0
   pontuacao: {fileID: 0}
 --- !u!114 &5770057359103411757
 MonoBehaviour:

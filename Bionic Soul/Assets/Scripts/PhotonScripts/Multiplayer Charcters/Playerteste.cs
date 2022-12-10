@@ -8,25 +8,17 @@ using UnityEngine.UI;
 
 public class Playerteste : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private float startingHealth;
-    public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause, vitoria, lose, winC;
+    public GameObject bulletPreFab, gameover, enemy, pause, vitoria, lose, winC, jogo;
     private Playerteste hero;
     public SpriteRenderer spritex;
-    public float speedX, jumpStrength;
-    public float horizontal;
+    public float speedX, jumpStrength, horizontal, pontos;
     private Rigidbody2D body;
     private GameController gc;
     private bool groundCheck;
     private Transform foot;
-    public Transform swordSpawn;
-    public GameObject bulletPrefab;
     Animator anim;
     PhotonView view;
     public bool paraDireita;
-    public float firerate, bulletforce, pontos;
-    float nextfire;
-    public Image barradeVida;
     public Text pontuacao;
 
     private void Awake()
@@ -45,9 +37,10 @@ public class Playerteste : MonoBehaviourPunCallbacks
         Time.timeScale = 1;
         GameObject tutut = GameObject.Find("Text");
         pontuacao = tutut.GetComponent<Text>();
-        vitoria = GameObject.Find("Vitoria");
+        vitoria = GameObject.Find("CanvasVitoria");
         vitoria.SetActive(false);
         winC = GameObject.Find("Win");
+        jogo = GameObject.Find("Jogo");
     }
 
     // Update is called once per frame
@@ -57,15 +50,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
         if (view.IsMine)
         {
 
-            
-            if (currentHealth <= 0)
-            {
-                /*gameover.SetActive(true);
-                enemy.SetActive(false);
-                Time.timeScale = 0;
-                Destroy(this.gameObject);*/
-
-            }
             #region controles de movimentação
             controls();
             if (Input.GetButtonDown("W") && groundCheck)
@@ -73,12 +57,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
                 body.velocity = new Vector2(body.velocity.x, jumpStrength);
                 anim.SetTrigger("Jump");
             }
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                pause.SetActive(true);
-                Time.timeScale = 0;
-            }
-
 
             if (Input.GetButtonDown("D"))//direita
             {
@@ -89,6 +67,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
                 }
 
             }
+
             else if (Input.GetButtonDown("A"))//esquerda
             {
                 paraDireita = false;
@@ -98,7 +77,6 @@ public class Playerteste : MonoBehaviourPunCallbacks
                 }
             }
         }
-        //pontuacao.text = ($"Pontos: {pontos}/10");
         #endregion
 
 
@@ -120,28 +98,7 @@ public class Playerteste : MonoBehaviourPunCallbacks
        
 
         #endregion
-        /*#region Controles de bala
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (Time.time > nextfire)
-            {
-                nextfire = Time.time + firerate;
-                GameObject tempPreFab = Instantiate(bulletPrefab, swordSpawn.position, swordSpawn.rotation);
-                tempPreFab.transform.parent = null;
-                if (Input.GetButtonDown("D") || paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor +
-                {
-                    tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * 1000);
-                }
-                else if (Input.GetButtonDown("A") || !paraDireita)//Se o player estiver olhando pra direita a bala vai ter valor -
-                {
-                    tempPreFab.GetComponent<Rigidbody2D>().AddForce(transform.right * -1000);
-                }
-
-            }
-
-        }
-        #endregion*/
-
+        
     }
     public void SetGroundCheck(bool grounded)
     {
@@ -151,22 +108,13 @@ public class Playerteste : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            if (collision.CompareTag("BalaInimigo"))
-            {
-                currentHealth -= 1;
-
-                Destroy(collision.gameObject);
-            }
-
-
             if (collision.CompareTag("Moeda"))
             {
 
                 pontos++;
-               // photonView.RPC("cadela", RpcTarget.All, "pontos");
                 pontuacao.text = ($"Pontos: {pontos}/10");
-                GameObject pedro = collision.gameObject;
-                destrui(pedro);
+                GameObject moeda = collision.gameObject;
+                destrui(moeda);
                 
             }
             if (collision.CompareTag("WinC") && pontos >= 10)
@@ -184,6 +132,8 @@ public class Playerteste : MonoBehaviourPunCallbacks
     public void Win()
     {
         vitoria.SetActive(true);
+        jogo.SetActive(false);
+        Destroy(this.gameObject);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
