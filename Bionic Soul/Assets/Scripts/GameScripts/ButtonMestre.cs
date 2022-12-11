@@ -60,5 +60,6 @@ public class ButtonMestre : MonoBehaviour
     {
         pausa.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 }

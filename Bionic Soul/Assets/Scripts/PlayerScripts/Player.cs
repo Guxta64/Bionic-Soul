@@ -4,17 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    GameObject CanvasPausa;
     [SerializeField] private float startingHealth;
     public float currentHealth;
-    public GameObject bulletPreFab, gameover, enemy, pause, win, bulletPrefab;
+    public GameObject bulletPreFab, gameover, enemy, pause, win, bulletPrefab, jogo;
     public SpriteRenderer spritex;
     public float speedX, jumpStrength, horizontal, firerate, bulletforce;
     [SerializeField]private Rigidbody2D body;
-    private bool groundCheck;
+    private bool groundCheck, pausado;
     public Transform swordSpawn;
     Animator anim;
-    public bool paraDireita;
+    public bool paraDireita, controlando;
     float nextfire;
+    public bool despausar() { return pausado; }
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -30,19 +34,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            controls();
+        controls();
         if (currentHealth <= 0)
         {
             gameover.SetActive(true);
-            enemy.SetActive(false);
+            jogo.SetActive(false);
             Time.timeScale = 0;
-            Destroy(this.gameObject);
-            
+            gameObject.SetActive(false);
         }
         #region controles de movimentação
         controls();
         if (Input.GetKey(KeyCode.Escape))
         {
+            Cursor.visible = true;
             pause.SetActive(true);
             Time.timeScale = 0;
         }
@@ -50,7 +54,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetButtonDown("D"))//direita
             {
-                paraDireita = true;
+            paraDireita = true;
                 if (transform.localScale.x < 0)
                 {
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -59,7 +63,7 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetButtonDown("A"))//esquerda
             {
-                paraDireita = false;
+            paraDireita = false;
                 if (transform.localScale.x > 0)
                 {
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -122,6 +126,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Win"))
         {
             win.SetActive(true);
+            jogo.SetActive(false);
         }
         if (collision.CompareTag("BalaInimigo"))
         {
@@ -137,4 +142,5 @@ public class Player : MonoBehaviour
     {
         SetGroundCheck(false);
     }
+
 }
